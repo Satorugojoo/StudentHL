@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/taskOverviewFragment">
+
+    <fragment
+        android:id="@+id/taskOverviewFragment"
+        android:name="com.example.studenthardlife.TaskOverviewFragment"
+        android:label="fragment_task_overview"
+        tools:layout="@layout/fragment_task_overview" >
+        <action
+            android:id="@+id/action_taskOverviewFragment_to_taskDetailsFragment"
+            app:destination="@id/taskDetailsFragment" >
+            <argument
+                android:name="taskId"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/taskDetailsFragment"
+        android:name="com.example.studenthardlife.TaskDetailsFragment"
+        android:label="fragment_task_details"
+        tools:layout="@layout/fragment_task_details" >
+        <action
+            android:id="@+id/action_taskDetailsFragment_to_taskOverviewFragment"
+            app:destination="@id/taskOverviewFragment" />
+    </fragment>
+</navigation>
